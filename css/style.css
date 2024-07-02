@@ -1,0 +1,165 @@
+/*style untuk body html*/
+body{
+    background-color: #e7e6e6;
+}
+
+/*style untuk semua bagian header dan article*/
+header{
+    font-family: sans-serif;
+    padding-left: 5px;
+}
+article{
+    font-family: math;
+}
+
+/*Di bawah ini untuk navigation bars*/
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav > a{
+    text-decoration: none;
+    background-color: #ffffff;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+/*Logonya mungkin diganti lagi*/
+.logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    background-image: url(../assets/LogoFD-1.png);
+    background-size: cover;
+}
+
+/*Settingan umum untuk bagian main*/
+main{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+/*Di bawah ini untuk home*/
+.photo-banner{
+    max-width: 100%;
+    height: 500px;
+    background-image: url(../assets/);
+    border: 1px solid;
+}
+
+/*Di bawah ini untuk profile*/
+.profile{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.profile-container{
+    align-self: center;
+    padding: 10px;
+    background-color: #061aa2;
+    text-align: -webkit-center;
+    border-radius: 5%;
+}
+
+.profile-container > p {
+    color: #ffffff;
+}
+
+.profile-photo{
+    background-position: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-image: url(../assets/FDanni.png);
+    background-size: cover;
+    margin: 2px;
+}
+
+/*Di bawah ini untuk portofolio*/
+.achievement-portfolio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.achievement-portfolio > div{
+    align-self: center;
+    padding: 20px;
+    background-color: rgb(106, 130, 152);
+    color: #ffffff;
+}
+
+
+/*Untuk sekarang bagian portofolio kosong*/
+
+/*Di bawah ini untuk bagian form*/
+.lastsection{
+    flex-direction: row;
+    display: flex;
+}
+
+.lastsection > div{
+    display: flex;
+    flex: 1; /*<-- Di sebelah adalah rasio flexnya*/
+    align-content: center; 
+    justify-content: center;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#symbol-required{
+    color: red;
+}
+
+input[type=text], input[type=date], textarea{
+    padding: 12px;
+    width: 100%;
+}
+input[type=submit]{
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    float: right;
+}
+input[type=submit]:hover{
+    background-color: darkorange;
+}
+
+label{
+    padding: 12px;
+    display: inline-block;
+}
+
+.form-results > table{
+    padding-left: 5px;
+    padding-right: 30px;
+    border: 1px solid;
+    background-color: #ffffff;
+}
+
+/*Di bawah ini untuk footer*/
+footer>p{
+    align-content: center;
+    text-align: end;
+}

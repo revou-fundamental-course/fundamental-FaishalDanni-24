@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <!--Di sini terdapat link css beserta meta viewport-->
+    <head>
+        <title>Website Faishal</title>
+        <link rel="stylesheet" href="css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    <!--Di bawah adalah isi yang ditampilkan ke user-->
+    <body>
+
+        <header class="nav-container">
+            <div class="logo"></div>
+            <!--Ini header untuk nav-->
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#my-profile">My Profile</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#message-us">Message Me</a>
+            </nav>
+        </header>
+        <hr>
+
+        <main>
+
+            <!--Ini bagian home-->
+            <section id="home">
+                <header>
+                    <h1>Hi <span id="username">Name</span>, Welcome To My Website</h1>
+                    <p>ini adalah website portofolio saya</p>
+                </header>
+
+                <article>
+                    <div class="photo-banner"></div>
+                </article>
+            </section>
+            <hr>
+
+            <!--Ini bagian my profile-->
+            <section id="my-profile">
+                <header>
+                    <h2>My Profile</h2>
+                </header>
+
+                <article>
+                    <div class="profile">
+                        <div class="profile-container">
+                            <div class="profile-photo"></div>
+                            <p>Nama : Faishal Danni</p>
+                            <p>Tanggal Lahir : 24 Februari 2007</p>
+                            <p>Jenis Kelamin : Laki-Laki</p>
+                            <p>Pekerjaan : Mahasiswa</p>
+                            <p>Skill : Problem Solving</p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <hr>
+
+            <!--Ini bagian portofolio-->
+            <section id="portfolio">
+                <header>
+                    <h2>Portfolio</h2>
+                </header>
+
+                <article>
+                    <div class="achievement-portfolio">
+                        <div>OOPS!, Belum Ada kontennya</div>
+                    </div>
+                    
+                </article>
+                
+            </section>
+            <hr>
+
+            <!--Ini bagian message us-->
+            <section id="message-us">
+                <header>
+                    <h2>Message me</h2>
+                </header>               
+                <article class="lastsection">
+                    <!--Ini adalah bagian form untuk mengirim pesan-->
+                    <div class="formulir">
+                    <form name="form-message" onsubmit="return validasi_form()" method="post">
+                        <div class="row">
+                            <p><span id="symbol-required">*</span> : Wajib diisi</p>
+                            <div class="col-25">
+                                <label for="nama">Nama <span id="symbol-required">*</span> : </label>
+                            </div>
+                            <div class="col-75">
+                                <input id="nama" type="text" placeholder="Nama anda...">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="tl">TL <span id="symbol-required">*</span> : </label>
+                            </div>
+                            <div class="col-75">
+                                <input id="tl" type="date">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="kelamin">Jenis Kelamin <span id="symbol-required">*</span> : </label>
+                            </div>
+                            <div class="col-75">
+                                <input type="radio" id="laki-laki" name="kelamin" value="Laki-laki">
+                                <label for="laki-laki">Laki-laki</label>
+                                <input type="radio" id="perempuan" name="kelamin" value="Perempuan">
+                                <label for="perempuan">Perempuan</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="pesan">Pesan <span id="symbol-required">*</span> : </label>
+                            </div>
+                            <div class="col-75">
+                                <textarea name="pesan" rows="10" cols="60" placeholder="Pesan anda..."></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <input type="submit" value="Kirim">
+                        </div>
+                        <!--Setelah disubmit, js akan melakukan validasi yang lalu akan merubah tabel di bawah-->
+                    </form>
+                    </div>
+
+                    <!--Di bawah ini isinya pesan tadi-->
+                    <div class="form-results">
+                        <table>
+                            <tr>
+                                <th>Message sent at :</th>
+                                <td id="show-time">None</td>
+                            </tr>
+                            <tr>
+                                <th>Nama :</th>
+                                <td id="show-fullname">None</td>
+                            </tr>
+                            <tr>
+                                <th>Tanggal Lahir :</th>
+                                <td id="show-datebirth">None</td>
+                            </tr>
+                            <tr>
+                                <th>Jenis Kelamin :</th>
+                                <td id="show-gender">None</td>
+                            </tr>
+                            <tr>
+                                <th>Pesan :</th>
+                                <td id="show-message">None</td>
+                            </tr>
+                        </table>
+                    </div>
+                </article>
+            </section>
+            <hr>
+        </main>
+
+        <!--Disini adalah tempat menaruh credits-->
+        <footer>
+            <p>Faishal Danni 2024</p>
+            <p>Thank you for visiting</p>
+        </footer>
+
+        <script src="js/script.js"></script>
+
+    </body>
+</html>
