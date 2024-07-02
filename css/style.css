@@ -45,11 +45,8 @@ main{
 }
 
 /*Di bawah ini untuk home*/
-.photo-banner{
-    max-width: 100%;
-    height: 500px;
-    background-image: url(../assets/);
-    border: 1px solid;
+#banner-photo{
+    max-width: -webkit-fill-available;
 }
 
 /*Di bawah ini untuk profile*/
