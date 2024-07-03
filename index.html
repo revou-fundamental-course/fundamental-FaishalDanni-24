@@ -10,14 +10,14 @@
     <!--Di bawah adalah isi yang ditampilkan ke user-->
     <body>
 
-        <header class="nav-container">
+        <header class="header-container">
             <div class="logo"></div>
             <!--Ini header untuk nav-->
-            <nav>
-                <a href="#home">Home</a>
-                <a href="#my-profile">My Profile</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#message-us">Message Me</a>
+            <nav class="navbar">
+                <div><a href="#home">Home</a></div>
+                <div><a href="#my-profile">My Profile</a></div>
+                <div><a href="#portfolio">Portfolio</a></div>
+                <div><a href="#message-us">Message Me</a></div>
             </nav>
         </header>
         <hr>
@@ -32,7 +32,11 @@
                 </header>
 
                 <article>
-                    <div><img id="banner-photo" src="assets/BANNERu.png"></div>
+                    <img class="banner-photo" src="assets/artur-aldyrkhanov-u159a2eL6UE-unsplash.jpg" alt="Banner Slides 1">
+                    <img class="banner-photo" src="assets/artem-maltsev-vgQFlPq8tVQ-unsplash.jpg" alt="Banner Slides 2">
+                    <img class="banner-photo" src="assets/vishnu-mohanan-vE6WEdZA6Vg-unsplash.jpg" alt="Banner Slides 3">
+                    <button type="button" onclick="plusDivs(-1)">Previous</button>
+                    <button type="button" onclick="plusDivs(1)">Next</button>
                 </article>
             </section>
             <hr>
@@ -81,72 +85,77 @@
                 </header>               
                 <article class="lastsection">
                     <!--Ini adalah bagian form untuk mengirim pesan-->
-                    <div class="formulir">
-                    <form name="form-message" onsubmit="return validasi_form()" method="post">
-                        <div class="row">
-                            <p><span id="symbol-required">*</span> : Wajib diisi</p>
-                            <div class="col-25">
-                                <label for="nama">Nama <span id="symbol-required">*</span> : </label>
+                    <div>
+                        <form name="form-message" onsubmit="return validasi_form()" method="post">
+                            <div class="row">
+                                <p><span id="symbol-required">*</span> : Wajib diisi</p>
+                                <div class="col-25">
+                                    <label for="nama">Nama <span id="symbol-required">*</span> : </label>
+                                </div>
+                                <div class="col-75">
+                                    <input id="nama" type="text" placeholder="Nama anda...">
+                                </div>
                             </div>
-                            <div class="col-75">
-                                <input id="nama" type="text" placeholder="Nama anda...">
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="tl">TL <span id="symbol-required">*</span> : </label>
+                                </div>
+                                <div class="col-75">
+                                    <input id="tl" type="date">
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-25">
-                                <label for="tl">TL <span id="symbol-required">*</span> : </label>
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="kelamin">Jenis Kelamin <span id="symbol-required">*</span> : </label>
+                                </div>
+                                <div class="col-75">
+                                    <input type="radio" id="laki-laki" name="kelamin" value="Laki-laki">
+                                    <label for="laki-laki">Laki-laki</label>
+                                    <input type="radio" id="perempuan" name="kelamin" value="Perempuan">
+                                    <label for="perempuan">Perempuan</label>
+                                </div>
                             </div>
-                            <div class="col-75">
-                                <input id="tl" type="date">
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="pesan">Pesan <span id="symbol-required">*</span> : </label>
+                                </div>
+                                <div class="col-75">
+                                    <textarea name="pesan" rows="10" cols="60" placeholder="Pesan anda..."></textarea>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-25">
-                                <label for="kelamin">Jenis Kelamin <span id="symbol-required">*</span> : </label>
+                            <div class="row">
+                                <input type="submit" value="Kirim">
                             </div>
-                            <div class="col-75">
-                                <input type="radio" id="laki-laki" name="kelamin" value="Laki-laki">
-                                <label for="laki-laki">Laki-laki</label>
-                                <input type="radio" id="perempuan" name="kelamin" value="Perempuan">
-                                <label for="perempuan">Perempuan</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-25">
-                                <label for="pesan">Pesan <span id="symbol-required">*</span> : </label>
-                            </div>
-                            <div class="col-75">
-                                <textarea name="pesan" rows="10" cols="60" placeholder="Pesan anda..."></textarea>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <input type="submit" value="Kirim">
-                        </div>
                         <!--Setelah disubmit, js akan melakukan validasi yang lalu akan merubah tabel di bawah-->
-                    </form>
+                        </form>
                     </div>
-
+    
                     <!--Di bawah ini isinya pesan tadi-->
-                    <div class="form-results">
-                        <table>
+                    <div>
+                        <table class="form-results">
                             <tr>
-                                <th>Message sent at :</th>
+                                <th>Message sent at</th>
+                                <td>:</td>
                                 <td id="show-time">None</td>
                             </tr>
                             <tr>
-                                <th>Nama :</th>
+                                <th>Nama </th>
+                                <td>:</td>
                                 <td id="show-fullname">None</td>
                             </tr>
                             <tr>
-                                <th>Tanggal Lahir :</th>
+                                <th>Tanggal Lahir </th>
+                                <td>:</td>
                                 <td id="show-datebirth">None</td>
                             </tr>
                             <tr>
-                                <th>Jenis Kelamin :</th>
+                                <th>Jenis Kelamin </th>
+                                <td>:</td>
                                 <td id="show-gender">None</td>
                             </tr>
                             <tr>
-                                <th>Pesan :</th>
+                                <th>Pesan </th>
+                                <td>:</td>
                                 <td id="show-message">None</td>
                             </tr>
                         </table>
@@ -159,8 +168,10 @@
         <!--Disini adalah tempat menaruh credits-->
         <footer>
             <p>Faishal Danni 2024</p>
+            <p>Photo by <a target="_blank" href="https://unsplash.com/@aldyrkhanov?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Artur Aldyrkhanov</a> on <a target="_blank" href="https://unsplash.com/photos/body-of-water-reflecting-night-sky-u159a2eL6UE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></p>
+            <p>Photo by <a target="_blank" href="https://unsplash.com/@art_maltsev?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Artem Maltsev</a> on <a target="_blank" href="https://unsplash.com/photos/assorted-title-books-vgQFlPq8tVQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></p>
+            <p>Photo by <a target="_blank" href="https://unsplash.com/@vishnumaiea?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Vishnu Mohanan</a> on <a target="_blank" href="https://unsplash.com/photos/a-close-up-of-a-printed-circuit-board-vE6WEdZA6Vg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></p>
             <p>Thank you for visiting</p>
-            <p><a href="https://www.freepik.com/free-vector/flat-futuristic-cyber-monday-horizontal-banners-set_18953385.htm#query=website%20banner&position=0&from_view=keyword&track=ais_user&uuid=71102f8d-94b0-4794-8bc7-4e30d7fcafc3">Image by pikisuperstar</a> on Freepik</p>
         </footer>
 
         <script src="js/script.js"></script>

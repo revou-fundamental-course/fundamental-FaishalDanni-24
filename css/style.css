@@ -1,3 +1,4 @@
+
 /*style untuk body html*/
 body{
     background-color: #e7e6e6;
@@ -13,13 +14,18 @@ article{
 }
 
 /*Di bawah ini untuk navigation bars*/
-.nav-container{
+.header-container{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-nav > a{
+.navbar{
+    display: flex;
+}
+
+.navbar > div > a {
+    vertical-align: -webkit-baseline-middle;
     text-decoration: none;
     background-color: #ffffff;
     padding-left: 30px;
@@ -36,6 +42,7 @@ nav > a{
     background-color: #ffffff;
     background-image: url(../assets/LogoFD-1.png);
     background-size: cover;
+    border: 1px solid;
 }
 
 /*Settingan umum untuk bagian main*/
@@ -45,8 +52,9 @@ main{
 }
 
 /*Di bawah ini untuk home*/
-#banner-photo{
+.banner-photo{
     max-width: -webkit-fill-available;
+    margin-bottom: 10px;
 }
 
 /*Di bawah ini untuk profile*/
@@ -96,9 +104,10 @@ main{
 /*Untuk sekarang bagian portofolio kosong*/
 
 /*Di bawah ini untuk bagian form*/
+
 .lastsection{
-    flex-direction: row;
     display: flex;
+    flex-direction: row;
 }
 
 .lastsection > div{
@@ -131,6 +140,7 @@ main{
 input[type=text], input[type=date], textarea{
     padding: 12px;
     width: 100%;
+    resize: vertical;
 }
 input[type=submit]{
     background-color: orange;
@@ -138,25 +148,64 @@ input[type=submit]{
     border: none;
     padding: 10px 15px;
     float: right;
+    margin-bottom: 20px;
 }
 input[type=submit]:hover{
     background-color: darkorange;
 }
+
 
 label{
     padding: 12px;
     display: inline-block;
 }
 
-.form-results > table{
+.form-results{
     padding-left: 5px;
     padding-right: 30px;
     border: 1px solid;
     background-color: #ffffff;
 }
 
-/*Di bawah ini untuk footer*/
-footer>p{
-    align-content: center;
+/*Ini css untuk bagian footer*/
+footer > p{
+    padding-left: 50px;
+    padding-right: 50px;
     text-align: end;
+}
+
+
+/*Responsive UI*/
+/*Di bawah untuk resolusi laptop/desktop */
+@media only screen and (max-width: 1250px) {
+    .lastsection{
+        flex-direction: column;
+    }   
+}
+/*Di bawah untuk resolusi mobile*/
+@media only screen and (max-width: 600px){
+
+    .col-25{
+        width: 100%;
+        
+    }
+    .col-75{
+        width: 100%;
+    }
+    input[type=submit]{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .header-container{
+        flex-direction: column;
+    }
+    .navbar{
+        flex-direction: column;
+    }
+    .logo{
+        margin-bottom: 15px;
+    }
+    .lastsection{
+        flex-direction: column;
+    }
 }
