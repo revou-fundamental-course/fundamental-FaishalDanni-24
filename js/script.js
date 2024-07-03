@@ -10,28 +10,32 @@ else{
 }
 
 //Kode untuk menampilkan banner
-var slideIndex = 1;
-showDivs(slideIndex)
+var slideindex = 1;
+showslide(slideindex)
 
 //Untuk banner ke-n, hanya bisa 1 atau -1 (Tidak ada banner yang diskip ketika tombol dipencet)
-function plusDivs(n){
-    showDivs(slideIndex += n)
+function plusslide(n){
+    showslide(slideindex += n)
 }
 
-function showDivs(n){
+function showslide(n){
     var i;
-    var imgList = document.getElementsByClassName("banner-photo");
-    if (n > imgList.length) slideIndex = 1;
-    else if (n < 1) slideIndex = imgList.length
+    var imglist = document.getElementsByClassName("banner-photo");
+    if (n > imglist.length) slideindex = 1;
+    else if (n < 1) slideindex = imglist.length
 
     //for loop untuk menghilangkan banner lain kecuali 1
-    for (i = 0; i < imgList.length; i++){
-        imgList[i].style.display = "none";
+    for (i = 0; i < imglist.length; i++){
+        imglist[i].style.display = "none";
     }
     //-1 ada dibawah karena index dihitung mulai dari 0,1,2 bukan 1,2,3
-    imgList[slideIndex - 1].style.display = "block";
+    imglist[slideindex - 1].style.display = "block";
 }
 
+//Banner slide otomatis
+setInterval(() =>{
+    plusslide(1)
+}, 2000)
 //Di bawah ini untuk validasi form html
 function validasi_form(){
     //mengambil data dari form yang diisi
